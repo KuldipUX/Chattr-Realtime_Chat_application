@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  onSubmit="return validateForm()" >
+    <label for="name" >name</label>
+    
+    <input type="text" id="name" placeholder="name" >
+    <br><br>
+    <label for="email" >email</label>
+
+    <input type="email" id="email" >
+    <br><br>
+    <label for="password" >password</label>
+
+    <input type="password" id="password" >
+    <br><br>
+    <button type="submit" >Submit</button>
+    </form>
+    <script>
+   function validateForm(){
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        if (name == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+       if (email==""){
+        alert("Email must be filled");
+
+       }
+        if (password.length < 6) {
+        alert("bsdk 6 digit se zaada daal ");
+        return false;
+    }}
+    </script>
+</body>
+</html>

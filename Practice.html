@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h2>Digital Clock</h2>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+
+            // Add leading zero
+            if (h < 10) h = "0" + h;
+            if (m < 10) m = "0" + m;
+            if (s < 10) s = "0" + s;
+
+            document.getElementById("clock").innerHTML =
+                h + ":" + m + ":" + s;
+        }
+
+        // Update every second
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script> -->
+<script>
+        const today = new Date();
+
+        // Array of days
+        const days = [
+            "Sunday", "Monday", "Tuesday",
+            "Wednesday", "Thursday", "Friday", "Saturday"
+        ];
+
+        // Get current day
+        const dayName = days[today.getDay()];
+
+        // Get time
+        let hour = today.getHours();
+        let minute = today.getMinutes();
+        let second = today.getSeconds();
+
+        // AM / PM
+        let ampm = hour >= 12 ? "PM" : "AM";
+
+        // Convert to 12-hour format
+        hour = hour % 12;
+        // hour = hour ? hour : 12; // if hour is 0, make it 12
+        if(hour==0){
+            hour=12;
+        }
+        else{
+            hour = hour;
+        }
+        // Display output
+        document.write("Today is : " + dayName + ".<br>");
+        document.write("Current time is : " + hour + " " + ampm + " : "
+                       + minute + " : " + second);
+    </script>
+
+
+</body>
+</html>
